@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">Portfolio</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-indigo-600">About</a>
+                <a href="projects.html" class="text-indigo-600 font-medium">Projects</a>
+                <a href="contact.html" class="text-gray-700 hover:text-indigo-600">Contact</a>
+            </div>
+            <button class="md:hidden">
+                <i class="fas fa-bars text-2xl text-gray-700"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-4">My Projects</h1>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">Here's a collection of my recent work. Each project represents a unique challenge and solution.</p>
+            
+            <!-- Filter Controls -->
+            <div class="flex justify-center mb-12">
+                <div class="relative">
+                    <select id="filter" class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="all">All Projects</option>
+                        <option value="web">Web Development</option>
+                        <option value="mobile">Mobile Apps</option>
+                        <option value="design">UI/UX Design</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+                    <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" alt="E-commerce Platform" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">E-commerce Platform</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Web</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A full-featured online store with product catalog, cart, and payment integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Live Demo</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="mobile">
+                    <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg" alt="Fitness Tracker" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Fitness Tracker App</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mobile application for tracking workouts, nutrition, and health metrics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React Native</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Firebase</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">App Store</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="design">
+                    <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="UI Design System" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">UI Design System</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">UI/UX</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Comprehensive design system with components, typography, and color guidelines.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Figma</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Storybook</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">View Prototype</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+                    <img src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg" alt="Task Manager" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Task Management App</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Web</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Productivity application for organizing tasks with team collaboration features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Express</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Live Demo</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="mobile">
+                    <img src="https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg" alt="Recipe App" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Recipe Finder App</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Mobile</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mobile application for discovering and saving cooking recipes.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Flutter</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Dart</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">App Store</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden" data-category="web">
+                    <img src="https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg" alt="Weather Dashboard" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Weather Dashboard</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Web</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Real-time weather information with 5-day forecast and location search.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">API Integration</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Live Demo</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">John Doe</h3>
+                    <p class="text-gray-400">Full Stack Developer</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
+                </div>
+                <div>
+                    <a href="#" class="text-gray-400 hover:text-white flex items-center">
+                        <i class="fas fa-arrow-up mr-2"></i> Back to Top
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 John Doe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.getElementById('filter').addEventListener('change', function() {
+            const category = this.value;
+            const projects = document.querySelectorAll('.project-card');
+            
+            projects.forEach(project => {
+                if (category === 'all' || project.dataset.category === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
